@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LWALIDA - عطور فاخرة بأسعار مميزة تبدأ من 30 درهم. توصيل لجميع مدن المغرب.">
+    <meta property="og:title" content="LWALIDA - عطور فاخرة | عالم من الأناقة والفخامة">
+    <meta property="og:image" content="d2f2a0af-2e1b-4b8e-8681-113ab8c71366 (2).jpg">
+    <title>LWALIDA - عطور فاخرة | عالم من الأناقة والفخامة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-dark: #B8941F;
+            --gold-light: #F4E4BC;
+            --black: #1A1A1A;
+            --dark-brown: #2C1810;
+            --cream: #F9F6F0;
+            --white: #FFFFFF;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--cream); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-primary); border-radius: 5px; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: var(--transition); background: transparent; }
+        nav.scrolled { background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); padding: 15px 5%; box-shadow: 0 5px 30px rgba(0,0,0,0.3); }
+        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo img { height: 60px; width: auto; filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.3)); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold-primary); letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: 600; position: relative; transition: var(--transition); font-size: 1.1rem; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 0; height: 2px; background: var(--gold-primary); transition: var(--transition); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--gold-primary); }
+        .nav-icons { display: flex; gap: 25px; align-items: center; }
+        .nav-icons a { color: var(--white); font-size: 1.3rem; transition: var(--transition); position: relative; }
+        .nav-icons a:hover { color: var(--gold-primary); transform: translateY(-3px); }
+        .mobile-menu { display: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+
+        /* Hero Section */
+        .hero { height: 100vh; background: linear-gradient(135deg, rgba(44, 24, 16, 0.9), rgba(26, 26, 26, 0.95)), url('d2f2a0af-2e1b-4b8e-8681-113ab8c71366 (2).jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%); }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
+        .hero-badge { display: inline-block; background: rgba(212, 175, 55, 0.2); border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 10px 30px; border-radius: 50px; font-weight: 600; margin-bottom: 30px; animation: fadeInDown 1s ease; backdrop-filter: blur(10px); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--white); margin-bottom: 20px; line-height: 1.2; animation: fadeInUp 1s ease 0.2s both; text-shadow: 2px 2px 20px rgba(0,0,0,0.5); }
+        .hero h1 span { color: var(--gold-primary); display: block; font-size: 2.5rem; margin-top: 10px; }
+        .hero p { font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 40px; animation: fadeInUp 1s ease 0.4s both; }
+        .hero-price { font-size: 2rem; color: var(--gold-primary); font-weight: 700; margin-bottom: 30px; animation: fadeInUp 1s ease 0.5s both; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; animation: fadeInUp 1s ease 0.6s both; }
+
+        .btn { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; border: 2px solid transparent; }
+        .btn-primary { background: var(--gold-primary); color: var(--black); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4); background: var(--gold-light); }
+        .btn-secondary { background: transparent; color: var(--white); border-color: var(--white); }
+        .btn-secondary:hover { background: var(--white); color: var(--black); transform: translateY(-3px); }
+        .btn-tiktok { background: #000000; color: var(--white); border: 2px solid #fff; }
+        .btn-tiktok:hover { background: #25F4EE; color: #000; border-color: #25F4EE; transform: translateY(-3px); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Trust Bar */
+        .trust-bar { background: var(--white); padding: 30px 5%; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .trust-item { display: flex; align-items: center; gap: 15px; justify-content: center; }
+        .trust-icon { width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-dark); font-size: 1.3rem; }
+        .trust-text { text-align: right; }
+        .trust-text h4 { font-size: 1rem; color: var(--black); margin-bottom: 3px; }
+        .trust-text span { font-size: 0.85rem; color: #666; }
+
+        /* Offer Banner with Countdown */
+        .offer-banner { background: linear-gradient(135deg, var(--dark-brown), var(--black)); padding: 20px; text-align: center; color: var(--white); position: relative; overflow: hidden; }
+        .offer-banner::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: shine 3s infinite; }
+        @keyframes shine { to { left: 100%; } }
+        .offer-content { display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; position: relative; z-index: 1; }
+        .offer-text { font-size: 1.3rem; font-weight: 600; }
+        .offer-text span { color: var(--gold-primary); font-size: 1.5rem; }
+        
+        .countdown { display: flex; gap: 15px; align-items: center; }
+        .countdown-item { background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 10px; text-align: center; min-width: 60px; }
+        .countdown-item .number { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); display: block; }
+        .countdown-item .label { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
+
+        /* Products Section */
+        .section { padding: 100px 5%; position: relative; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--black); margin-bottom: 15px; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: var(--gold-primary); }
+        .section-subtitle { color: #666; font-size: 1.2rem; max-width: 600px; margin: 20px auto 0; }
+        
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .product-card { background: var(--white); border-radius: 25px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: var(--transition); position: relative; border: 2px solid transparent; }
+        .product-card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.2); border-color: var(--gold-primary); }
+        .product-badge { position: absolute; top: 20px; right: 20px; background: var(--gold-primary); color: var(--black); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .product-badge.men { background: #2C3E50; color: var(--white); }
+        .product-badge.women { background: #E91E63; color: var(--white); }
+        .product-badge.special { background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); color: var(--black); }
+        
+        .product-image { height: 350px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f5f5f5, #e8e8e8); }
+        .product-image img { width: 70%; height: auto; transition: var(--transition); filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3)); z-index: 1; }
+        .product-card:hover .product-image img { transform: scale(1.1) rotate(5deg); }
+        .product-bg-pattern { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: radial-gradient(var(--gold-primary) 2px, transparent 2px); background-size: 20px 20px; }
+        
+        .product-info { padding: 30px; text-align: center; }
+        .product-category { color: var(--gold-dark); font-size: 1rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .product-name { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--black); margin-bottom: 15px; }
+        .product-description { color: #666; font-size: 1rem; margin-bottom: 20px; line-height: 1.6; }
+        
+        .note-tag { 
+    background: rgba(212, 175, 55, 0.1); 
+    color: var(--gold-dark); 
+    padding: 5px 15px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    border: 1px solid rgba(212, 175, 55, 0.3); 
+}
+
+/* الخلفية يجب أن تكون داخل selector */
+.hero { 
+    background: url('444gojkregj.png');
+    /* باقي الخصائص... */
+}
+
+.product-size { 
+    font-size: 1.1rem; 
+    color: #888; 
+    margin-bottom: 20px; 
+}
+        .product-price-box { background: linear-gradient(135deg, var(--cream), var(--white)); padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 2px solid rgba(212, 175, 55, 0.2); }
+        .price-label { font-size: 0.9rem; color: #888; margin-bottom: 5px; }
+        .product-price { font-size: 2.5rem; font-weight: 700; color: var(--gold-dark); direction: rtl; }
+        .product-price span { font-size: 1.2rem; color: #666; }
+        
+        .order-btn { width: 100%; padding: 18px; background: #25D366; color: var(--white); border: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-family: 'Cairo', sans-serif; }
+        .order-btn:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); background: #128C7E; }
+
+        /* Stats Section */
+        .stats-section { background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); padding: 60px 5%; color: var(--black); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .stat-item { padding: 20px; }
+        .stat-number { font-size: 3rem; font-weight: 700; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .stat-label { font-size: 1.1rem; font-weight: 600; }
+
+        /* Testimonials Section */
+        .testimonials { background: var(--white); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: var(--cream); padding: 30px; border-radius: 20px; position: relative; border: 2px solid transparent; transition: var(--transition); }
+        .testimonial-card:hover { border-color: var(--gold-primary); transform: translateY(-5px); }
+        .testimonial-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .testimonial-avatar { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700; }
+        .testimonial-info h4 { color: var(--black); margin-bottom: 5px; }
+        .testimonial-stars { color: #FFD700; }
+        .testimonial-text { color: #555; line-height: 1.8; font-style: italic; position: relative; padding-right: 20px; }
+        .testimonial-text::before { content: '"'; position: absolute; right: 0; top: -10px; font-size: 3rem; color: var(--gold-primary); opacity: 0.3; font-family: serif; }
+        .verified-badge { display: inline-flex; align-items: center; gap: 5px; background: #25D366; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; margin-top: 10px; }
+
+        /* Gallery Placeholder */
+        .gallery-section { background: var(--cream); }
+        .gallery-placeholder { background: linear-gradient(135deg, #e0e0e0, #f0f0f0); border: 3px dashed var(--gold-primary); border-radius: 20px; padding: 60px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .gallery-placeholder i { font-size: 4rem; color: var(--gold-primary); margin-bottom: 20px; opacity: 0.5; }
+        .gallery-placeholder h3 { color: var(--black); margin-bottom: 10px; }
+        .gallery-placeholder p { color: #666; }
+
+        /* Activity Toast */
+        .activity-toast { position: fixed; bottom: 100px; left: 30px; background: var(--white); padding: 15px 20px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 15px; z-index: 998; transform: translateX(-150%); transition: transform 0.5s ease; border-right: 4px solid var(--gold-primary); max-width: 350px; }
+        .activity-toast.show { transform: translateX(0); }
+        .activity-icon { width: 40px; height: 40px; background: rgba(37, 211, 102, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #25D366; }
+        .activity-content { flex: 1; }
+        .activity-text { font-size: 0.9rem; color: var(--black); font-weight: 600; }
+        .activity-time { font-size: 0.75rem; color: #888; }
+
+        /* Features Section */
+        .features { background: linear-gradient(135deg, var(--dark-brown), var(--black)); color: var(--white); position: relative; overflow: hidden; }
+        .features::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent); border-radius: 50%; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; }
+        .feature-item { text-align: center; padding: 40px 30px; border-radius: 20px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.2); transition: var(--transition); }
+        .feature-item:hover { transform: translateY(-10px); background: rgba(255,255,255,0.1); border-color: var(--gold-primary); }
+        .feature-icon { font-size: 3.5rem; color: var(--gold-primary); margin-bottom: 20px; }
+        .feature-title { font-size: 1.4rem; margin-bottom: 10px; font-weight: 700; }
+        .feature-desc { color: rgba(255,255,255,0.7); font-size: 1rem; }
+
+        /* Order Process */
+        .order-process { background: var(--white); }
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .step-card { text-align: center; padding: 40px 30px; position: relative; }
+        .step-number { width: 60px; height: 60px; background: var(--gold-primary); color: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px; position: relative; }
+        .step-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: var(--black); }
+        .step-desc { color: #666; font-size: 0.95rem; }
+
+        /* Contact Section */
+        .contact-section { background: linear-gradient(135deg, var(--cream), var(--white)); position: relative; }
+        .contact-container { max-width: 800px; margin: 0 auto; text-align: center; }
+        .contact-box { background: var(--white); padding: 50px; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 2px solid rgba(212, 175, 55, 0.2); }
+        .contact-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--black); }
+        .contact-subtitle { color: #666; font-size: 1.1rem; margin-bottom: 40px; }
+        .contact-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .contact-method { display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 30px 20px; background: var(--cream); border-radius: 20px; text-decoration: none; color: var(--black); transition: var(--transition); border: 2px solid transparent; }
+        .contact-method:hover { transform: translateY(-5px); border-color: var(--gold-primary); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .contact-icon { width: 70px; height: 70px; border-radius: 50%; background: var(--gold-primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--black); transition: var(--transition); }
+        .contact-method:hover .contact-icon { transform: scale(1.1) rotate(10deg); }
+        .contact-icon.whatsapp { background: #25D366; color: var(--white); }
+        .contact-icon.tiktok { background: #000000; color: var(--white); border: 2px solid #25F4EE; }
+        .contact-details h4 { font-size: 1.3rem; margin-bottom: 5px; }
+        .contact-details span { color: #666; font-size: 1.1rem; font-weight: 600; }
+
+        /* Order Form */
+        .order-form-section { background: var(--black); color: var(--white); position: relative; overflow: hidden; }
+        .order-form-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>'); background-size: 50px 50px; }
+        .form-container { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+        .form-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; color: var(--gold-primary); }
+        .form-subtitle { text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 40px; }
+        .order-form { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; font-weight: 600; color: var(--gold-light); font-size: 1.1rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 15px 20px; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 10px; font-family: 'Cairo', sans-serif; font-size: 1rem; background: rgba(255,255,255,0.1); color: var(--white); transition: var(--transition); }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold-primary); background: rgba(255,255,255,0.15); }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.5); }
+        .form-group select option { background: var(--black); color: var(--white); }
+        .submit-btn { width: 100%; padding: 18px; background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); color: var(--black); border: none; border-radius: 10px; font-weight: 700; font-size: 1.2rem; cursor: pointer; transition: var(--transition); font-family: 'Cairo', sans-serif; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+
+        /* Footer */
+        footer { background: var(--black); color: var(--white); padding: 60px 5% 30px; position: relative; border-top: 3px solid var(--gold-primary); }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand .logo-text { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 20px; display: inline-block; }
+        .footer-brand p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
+        .social-links { display: flex; gap: 15px; }
+        .social-links a { width: 45px; height: 45px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); text-decoration: none; font-size: 1.2rem; }
+        .social-links a:hover { background: var(--gold-primary); color: var(--black); transform: translateY(-3px); }
+        .social-links a.tiktok:hover { background: #25F4EE; color: #000; }
+        .footer-column h4 { color: var(--gold-primary); font-size: 1.3rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-column h4::after { content: ''; position: absolute; bottom: 0; right: 0; width: 40px; height: 2px; background: var(--gold-primary); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+        .footer-column a { color: rgba(255,255,255,0.7); text-decoration: none; transition: var(--transition); display: inline-block; }
+        .footer-column a:hover { color: var(--gold-primary); padding-right: 5px; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+        .payment-methods { display: flex; justify-content: center; gap: 20px; margin-top: 20px; font-size: 2rem; color: rgba(255,255,255,0.5); }
+
+        /* WhatsApp Float */
+        .whatsapp-float { position: fixed; bottom: 30px; left: 30px; width: 65px; height: 65px; background: #25D366; color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); cursor: pointer; z-index: 999; transition: var(--transition); text-decoration: none; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); } 50% { box-shadow: 0 5px 30px rgba(37, 211, 102, 0.7); } }
+        .whatsapp-float:hover { transform: scale(1.1); animation: none; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .products-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero h1 span { font-size: 1.5rem; }
+            .section-title { font-size: 2rem; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+            .footer-column h4::after { right: 50%; transform: translateX(50%); }
+            .contact-methods { grid-template-columns: 1fr; }
+            .order-form { padding: 25px; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .countdown { flex-wrap: wrap; justify-content: center; }
+            .activity-toast { left: 10px; right: 10px; max-width: none; }
+        }
+
+        .success-message { display: none; background: rgba(37, 211, 102, 0.2); border: 2px solid #25D366; color: #25D366; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: center; font-weight: 700; }
+        .success-message.show { display: block; animation: fadeInUp 0.5s ease; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <span class="logo-text">LWALIDA</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#products">العطور</a></li>
+            <li><a href="#testimonials">آراء العملاء</a></li>
+            <li><a href="#order">اطلب الآن</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="https://www.tiktok.com/@lwalidaparfum" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/212698623785" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <div class="mobile-menu" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">✦ عطور لوليدة الفاخرة ✦</div>
+            <h1>اكتشف عالم العطور <span>الأصيلة والفاخرة</span></h1>
+            <p>ثلاثة عطور مميزة مختارة بعناية، تبدأ أسعارنا من</p>
+            <div class="hero-price">30 درهم فقط</div>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> اكتشف العطور</a>
+                <a href="https://wa.me/212698623785" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> تواصل عبر واتساب</a>
+                <a href="https://www.tiktok.com/@lwalidaparfum" class="btn btn-tiktok" target="_blank"><i class="fab fa-tiktok"></i> تابعنا على تيك توك</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-grid">
+            <div class="trust-item"><div class="trust-icon"><i class="fas fa-shipping-fast"></i></div><div class="trust-text"><h4>توصيل سريع</h4><span>24-48 ساعة لجميع المدن</span></div></div>
+            <div class="trust-item"><div class="trust-icon"><i class="fas fa-shield-alt"></i></div><div class="trust-text"><h4>جودة مضمونة</h4><span>تركيبة مركزة تدوم طويلاً</span></div></div>
+            <div class="trust-item"><div class="trust-icon"><i class="fas fa-money-bill-wave"></i></div><div class="trust-text"><h4>دفع عند الاستلام</h4><span>ادفع بعد استلام طلبك</span></div></div>
+            <div class="trust-item"><div class="trust-icon"><i class="fas fa-undo"></i></div><div class="trust-text"><h4>استبدال سهل</h4><span>ضمان استبدال خلال 7 أيام</span></div></div>
+        </div>
+    </div>
+
+    <!-- Offer Banner with Countdown -->
+    <div class="offer-banner">
+        <div class="offer-content">
+            <div class="offer-text"><i class="fas fa-fire" style="color: #E74C3C;"></i> <span>عرض خاص محدود:</span> توصيل مجاني + خصم 20% على الطلب الثاني</div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item"><span class="number" id="hours">23</span><span class="label">ساعة</span></div>
+                <div class="countdown-item"><span class="number" id="minutes">59</span><span class="label">دقيقة</span></div>
+                <div class="countdown-item"><span class="number" id="seconds">59</span><span class="label">ثانية</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="section-header">
+            <h2 class="section-title">تشكيلتنا المميزة</h2>
+            <p class="section-subtitle">ثلاثة عطور فاخرة بتركيبات فريدة، اختر ما يناسبك</p>
+        </div>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge women">نسائي</div>
+                <div class="product-image"><div class="product-bg-pattern"></div><img src="Gemini_Generated_Image_5ognvh5ognvh5ogn.png" alt="لوليدة روز"></div>
+                <div class="product-info">
+                    <div class="product-category">عطر نسائي</div>
+                    <h3 class="product-name">لوليدة روز</h3>
+                    <p class="product-description">عطر نسائي فاخر يجمع بين نسيم حدائق بلغاريا يحتضنك بزهر الياسمين والورد، ثم يدفئك بعناق الفانيليا والباتشولي</p>
+                    <div class="product-notes">
+                        <div class="notes-group"><span class="notes-label">الافتتاحية:</span><span class="note-tag">الياسمين</span><span class="note-tag">الماندرين</span><span class="note-tag">الورد البلغاري</span></div>
+                        <div class="notes-group"><span class="notes-label">القلب:</span><span class="note-tag">الباتشولي</span><span class="note-tag">الفانيليا</span></div>
+                        <div class="notes-group"><span class="notes-label">القاعدة:</span><span class="note-tag">المسك الأبيض</span><span class="note-tag">خشب الكشمير</span><span class="note-tag">اللبان العربي</span></div>
+                    </div>
+                    <div class="product-size">الحجم: 25 مل</div>
+                    <div class="product-price-box"><div class="price-label">السعر</div><div class="product-price">30 <span>درهم</span></div></div>
+                    <a href="https://wa.me/212698623785?text=مرحباً، أريد طلب عطر لوليدة روز النسائي" class="order-btn" target="_blank"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge men">رجالي</div>
+                <div class="product-image" style="background: linear-gradient(135deg, #2C3E50, #34495E);"><div class="product-bg-pattern"></div><img src="Gemini_Generated_Image_u18dznu18dznu18d.png" alt="لوليدة بلاتينوم"></div>
+                <div class="product-info">
+                    <div class="product-category">عطر رجالي</div>
+                    <h3 class="product-name">لوليدة بلاتينوم</h3>
+                    <p class="product-description">عطر رجالي قوي يمزج شرقية العود الكمبودي بغموض الجلد ودفء التبغ، يبدأ بزعفران ذهبي وينتهي بأثر مسكي</p>
+                    <div class="product-notes">
+                        <div class="notes-group"><span class="notes-label">الافتتاحية:</span><span class="note-tag">الهيل</span><span class="note-tag">البرغموت</span><span class="note-tag">الزعفران</span></div>
+                        <div class="notes-group"><span class="notes-label">القلب:</span><span class="note-tag">خشب الصندل</span><span class="note-tag">أوراق التبغ</span><span class="note-tag">الجلد</span></div>
+                        <div class="notes-group"><span class="notes-label">القاعدة:</span><span class="note-tag">العود الكمبودي</span><span class="note-tag">العنبر الجاف</span><span class="note-tag">المسك الأسود</span></div>
+                    </div>
+                    <div class="product-size">الحجم: 25 مل</div>
+                    <div class="product-price-box"><div class="price-label">السعر</div><div class="product-price">30 <span>درهم</span></div></div>
+                    <a href="https://wa.me/212698623785?text=مرحباً، أريد طلب عطر لوليدة بلاتينوم الرجالي" class="order-btn" target="_blank"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-badge special">خاص</div>
+                <div class="product-image" style="background: linear-gradient(135deg, #D4AF37, #B8941F);"><div class="product-bg-pattern"></div><img src="Gemini_Generated_Image_vribvdvribvdvrib.png" alt="لوليدة جولد"></div>
+                <div class="product-info">
+                    <div class="product-category">عطر خاص</div>
+                    <h3 class="product-name">لوليدة جولد</h3>
+                    <p class="product-description">عطر فاخر للجنسين، تركيبة حصرية تجمع بين شرارة الفلفل الوردي وفاكهة الكرز الأسود الغامضة</p>
+                    <div class="product-notes">
+                        <div class="notes-group"><span class="notes-label">الافتتاحية:</span><span class="note-tag">الفلفل الوردي</span><span class="note-tag">الكرز الأسود</span><span class="note-tag">التوت</span></div>
+                        <div class="notes-group"><span class="notes-label">القلب:</span><span class="note-tag">أخشاب الكشمير</span><span class="note-tag">بخور العود الخفيف</span></div>
+                        <div class="notes-group"><span class="notes-label">القاعدة:</span><span class="note-tag">الفانيليا السوداء</span><span class="note-tag">المسك الأبيض</span></div>
+                    </div>
+                    <div class="product-size">الحجم: 25 مل</div>
+                    <div class="product-price-box"><div class="price-label">السعر</div><div class="product-price">30 <span>درهم</span></div></div>
+                    <a href="https://wa.me/212698623785?text=مرحباً، أريد طلب عطر لوليدة جولد الخاص" class="order-btn" target="_blank"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-number" data-target="1500">0</div><div class="stat-label">عميل سعيد</div></div>
+            <div class="stat-item"><div class="stat-number" data-target="3">0</div><div class="stat-label">عطور مميزة</div></div>
+            <div class="stat-item"><div class="stat-number" data-target="24">0</div><div class="stat-label">ساعة توصيل</div></div>
+            <div class="stat-item"><div class="stat-number" data-target="100">0</div><div class="stat-label">% رضا العملاء</div></div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="section-header">
+            <h2 class="section-title">آراء عملائنا</h2>
+            <p class="section-subtitle">شاهد ما يقوله عملاؤنا عن تجربتهم مع عطور لوليدة</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header"><div class="testimonial-avatar">س</div><div class="testimonial-info"><h4>سارة من الرباط</h4><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
+                <p class="testimonial-text">جربت لوليدة روز وكان رائعاً! الثبات ممتاز يدوم أكثر من 8 ساعات والريحة فخمة جداً. التوصيل كان سريع والتعامل محترم.</p>
+                <span class="verified-badge"><i class="fas fa-check-circle"></i> مشتري موثق</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header"><div class="testimonial-avatar">م</div><div class="testimonial-info"><h4>محمد من الدار البيضاء</h4><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
+                <p class="testimonial-text">لوليدة بلاتينوم رهيب! ريحة العود واضحة وثابتة. السعر مقابل الجودة ممتاز. طلبت مرتين وكل مرة الخدمة كانت أحسن.</p>
+                <span class="verified-badge"><i class="fas fa-check-circle"></i> مشتري موثق</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header"><div class="testimonial-avatar">ن</div><div class="testimonial-info"><h4>نورا من مراكش</h4><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div></div>
+                <p class="testimonial-text">أخذت العرض الثلاثي وكل العطور رائعة. لوليدة جولد يصلح للمناسبات الخاصة. العبوة أنيقة والتوصيل كان أسرع من المتوقع.</p>
+                <span class="verified-badge"><i class="fas fa-check-circle"></i> مشتري موثق</span>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="section-header"><h2 class="section-title" style="color: var(--white);">لماذا تختارنا؟</h2><p class="section-subtitle" style="color: rgba(255,255,255,0.7);">نقدم لك تجربة تسوق فريدة مع أفضل الخدمات</p></div>
+        <div class="features-grid">
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-medal"></i></div><h3 class="feature-title">جودة عالية</h3><p class="feature-desc">عطور مركزة بأجود المكونات تدوم طويلاً</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-shipping-fast"></i></div><h3 class="feature-title">توصيل سريع</h3><p class="feature-desc">توصيل لجميع مدن المغرب خلال 24-48 ساعة</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-tags"></i></div><h3 class="feature-title">أسعار مميزة</h3><p class="feature-desc">أفضل الأسعار تبدأ من 30 درهم فقط</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3 class="feature-title">دعم ممتاز</h3><p class="feature-desc">خدمة عملاء سريعة عبر الواتساب</p></div>
+        </div>
+    </section>
+
+    <!-- Order Process -->
+    <section class="section order-process">
+        <div class="section-header"><h2 class="section-title">كيفية الطلب</h2><p class="section-subtitle">ثلاث خطوات بسيطة للحصول على عطرك المفضل</p></div>
+        <div class="process-steps">
+            <div class="step-card"><div class="step-number">1</div><h3 class="step-title">اختر العطر</h3><p class="step-desc">اختر من بين ثلاثة عطور مميزة</p></div>
+            <div class="step-card"><div class="step-number">2</div><h3 class="step-title">تواصل معنا</h3><p class="step-desc">أرسل لنا طلبك عبر الواتساب</p></div>
+            <div class="step-card"><div class="step-number">3</div><h3 class="step-title">استلم طلبك</h3><p class="step-desc">توصيل سريع إلى باب منزلك</p></div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="section order-form-section" id="order">
+        <div class="form-container">
+            <h2 class="form-title">اطلب عطرك الآن</h2>
+            <p class="form-subtitle">املأ النموذج وسنقوم بالتواصل معك خلال دقائق</p>
+            <div class="success-message" id="successMessage"><i class="fas fa-check-circle"></i> تم إرسال طلبك بنجاح!</div>
+            <form class="order-form" id="orderForm" onsubmit="handleOrder(event)">
+                <div class="form-group"><label><i class="fas fa-user"></i> الاسم الكامل</label><input type="text" name="name" placeholder="أدخل اسمك" required></div>
+                <div class="form-group"><label><i class="fas fa-phone"></i> رقم الهاتف</label><input type="tel" name="phone" placeholder="0612345678" required></div>
+                <div class="form-group"><label><i class="fas fa-map-marker-alt"></i> المدينة</label><input type="text" name="address" placeholder="المدينة والحي" required></div>
+                <div class="form-group"><label><i class="fas fa-spray-can"></i> اختر العطر</label><select name="perfume" required><option value="">-- اختر --</option><option value="لوليدة روز">لوليدة روز (نسائي) - 30 درهم</option><option value="لوليدة بلاتينوم">لوليدة بلاتينوم (رجالي) - 30 درهم</option><option value="لوليدة جولد">لوليدة جولد (خاص) - 30 درهم</option><option value="الثلاثة">الثلاثة عطور - 80 درهم</option></select></div>
+                <div class="form-group"><label><i class="fas fa-sort-numeric-up"></i> الكمية</label><select name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div>
+                <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> إرسال الطلب</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-box">
+                <h3 class="contact-title">تواصل معنا</h3>
+                <p class="contact-subtitle">نحن هنا لمساعدتك في اختيار العطر المثالي</p>
+                <div class="contact-methods">
+                    <a href="tel:+212698623785" class="contact-method"><div class="contact-icon"><i class="fas fa-phone"></i></div><div class="contact-details"><h4>اتصل بنا</h4><span>+212 698-623785</span></div></a>
+                    <a href="https://wa.me/212698623785" class="contact-method" target="_blank"><div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div><div class="contact-details"><h4>واتساب</h4><span>+212 698-623785</span></div></a>
+                    <a href="https://www.tiktok.com/@lwalidaparfum" class="contact-method" target="_blank"><div class="contact-icon tiktok"><i class="fab fa-tiktok"></i></div><div class="contact-details"><h4>تيك توك</h4><span>@lwalidaparfum</span></div></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand"><span class="logo-text">LWALIDA</span><p>وجهتك الأولى للعطور الفاخرة في المغرب. منتجات عالية الجودة بأسعار منافسة.</p><div class="social-links"><a href="https://wa.me/212698623785" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="https://www.tiktok.com/@lwalidaparfum" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+            <div class="footer-column"><h4>روابط سريعة</h4><ul><li><a href="#home">الرئيسية</a></li><li><a href="#products">العطور</a></li><li><a href="#order">اطلب الآن</a></li></ul></div>
+            <div class="footer-column"><h4>العطور</h4><ul><li><a href="#products">لوليدة روز</a></li><li><a href="#products">لوليدة بلاتينوم</a></li><li><a href="#products">لوليدة جولد</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2024 LWALIDA PARFUM. جميع الحقوق محفوظة.</p></div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/212698623785" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Activity Toast -->
+    <div class="activity-toast" id="activityToast"><div class="activity-icon"><i class="fas fa-shopping-bag"></i></div><div class="activity-content"><div class="activity-text">قام شخص ما بطلب للتو</div><div class="activity-time">منذ دقائق</div></div></div>
+
+    <script>
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.top = '100%';
+            nav.style.left = '0';
+            nav.style.right = '0';
+            nav.style.background = 'rgba(26, 26, 26, 0.98)';
+            nav.style.padding = '20px';
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Stats Counter Animation
+        const observerOptions = { threshold: 0.5 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            entry.target.textContent = target === 100 ? target + '%' : target + '+';
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-number').forEach(stat => observer.observe(stat));
+
+        // Activity Toast
+        const activities = [
+            'قام أحمد من الرباط بالطلب للتو',
+            'قامت فاطمة من الدار البيضاء بالطلب للتو',
+            'قام يوسف من مراكش بالطلب للتو',
+            'قامت سارة من طنجة بالطلب للتو'
+        ];
+        
+        let activityIndex = 0;
+        function showActivity() {
+            const toast = document.getElementById('activityToast');
+            const text = toast.querySelector('.activity-text');
+            text.textContent = activities[activityIndex];
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+            
+            activityIndex = (activityIndex + 1) % activities.length;
+        }
+        
+        setTimeout(showActivity, 3000);
+        setInterval(showActivity, 15000);
+
+        // Form Handler
+        function handleOrder(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            let message = `*طلب جديد من موقع LWALIDA*%0A%0A`;
+            message += `*الاسم:* ${formData.get('name')}%0A`;
+            message += `*الهاتف:* ${formData.get('phone')}%0A`;
+            message += `*العنوان:* ${formData.get('address')}%0A`;
+            message += `*العطر:* ${formData.get('perfume')}%0A`;
+            message += `*الكمية:* ${formData.get('quantity')}%0A`;
+            message += `%0A*يرجى تأكيد الطلب*`;
+            
+            window.open(`https://wa.me/212698623785?text=${message}`, '_blank');
+            
+            document.getElementById('successMessage').classList.add('show');
+            form.reset();
+            setTimeout(() => document.getElementById('successMessage').classList.remove('show'), 5000);
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
